@@ -88,6 +88,10 @@ and one version number.
 curl -fsSL https://mobile-blueprint.dev/install.sh | sh
 ```
 
+Nothing is hosted at that domain yet. The installer and the bundle packager are
+built and tested; publishing a release is the remaining step. Until then,
+installing from a checkout produces a byte-identical result.
+
 This is the default recommendation because:
 
 - **Zero runtime dependency.** `sh`, `curl`, and `tar` exist on every macOS

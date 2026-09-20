@@ -12,14 +12,31 @@ Not an app starter. Scaffold your app first, then overlay this.
 
 ## Install
 
+> **Status: not published yet.** The hosted install below is the intended
+> distribution, described in `DESIGN.md`, but no tarball is hosted at that
+> domain today. Install from a checkout until it is.
+
+From a checkout, which works right now:
+
+```bash
+git clone https://github.com/rahatfci/ai-blueprint
+cd my-app
+../ai-blueprint/mobile/install.sh --dry-run   # see the plan, change nothing
+../ai-blueprint/mobile/install.sh             # install
+```
+
+No Node required. `sh`, `curl`, and `tar` are enough, which means it works on
+every macOS machine, every Linux CI runner, and WSL. The checkout path needs
+only `sh` and `tar`, since nothing is downloaded.
+
+Once a release is hosted, this becomes the one-liner:
+
 ```bash
 curl -fsSL https://mobile-blueprint.dev/install.sh | sh
 ```
 
-No Node required. `sh`, `curl`, and `tar` are enough, which means it works on
-every macOS machine, every Linux CI runner, and WSL.
-
-Prefer to read before running, which is reasonable:
+Reading a script before piping it to a shell is reasonable, and the docs should
+say so rather than pretend the concern is not real:
 
 ```bash
 curl -fsSL https://mobile-blueprint.dev/install.sh -o install.sh
@@ -27,12 +44,8 @@ less install.sh
 sh install.sh
 ```
 
-From a checkout, with no download at all:
-
-```bash
-git clone https://github.com/<owner>/ai-blueprint
-./ai-blueprint/mobile/install.sh --target ./my-app
-```
+Both paths produce identical results, so nothing is lost by choosing the one
+you trust.
 
 ### Options
 
